@@ -16,8 +16,10 @@ function App() {
   // fetched data
   let [fetchedData, setFetchedData] = useState([]);
   let { info, results } = fetchedData;
+console.log(fetchedData);
 
   let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}&status=${status}&gender=${gender}&species=${species}`;
+   
 
   // Whenever api changes I want to fetch new data
   useEffect(() => {
@@ -29,23 +31,28 @@ function App() {
 
   return (
     <div className="App">
+      {/* title starts here */}
       <h1 className="text-center ubuntu my-4">
         Rick and Morty <span className="text-primary">WiKi</span>{" "}
       </h1>
+      {/* title ends here */}
+
+ {/* Search bar */}
+ <Search setSearch={setSearch} setPageNumber={setPageNumber}/>
 
       <div className="container">
         <div className="row">
-          <div className="col-3">
+           
             <Filter />
-          </div>
+         
           <div className="col-8">
             <div className="row">
               <Card results={results} />
             </div>
           </div>
-        </div>
+        </div>      
       </div>
-      <Pagination/>
+      <Pagination info={info} pageNumber={pageNumber} setPageNumber={setPageNumber} />
     </div>
   );
 }

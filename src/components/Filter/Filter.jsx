@@ -1,11 +1,28 @@
-import React from 'react'
-
+import React from "react";
+import Gender from "./Category/Gender"
+import Species from "./Category/Species"
+import Status from "./Category/Status"
 const Filter = () => {
-    return (
-        <div>
-            Filters
-        </div>
-    )
-}
+  return (
+    <div className ="col-3">
+      <h1 className ="text-center fw-bold">Filter</h1>
+      <div
+        style={{ cursor: "pointer" }}
+        className ="text-center text-decoration-underline text-primary"
+      >
+        Clear Filters
+      </div>
 
-export default Filter
+      {/* ACCORDION */}
+      <div className="accordion" id="accordionExample">
+<Status/>
+<Species/>
+<Gender/>
+
+           
+      </div>
+    </div>
+  );
+};
+
+export default Filter;
