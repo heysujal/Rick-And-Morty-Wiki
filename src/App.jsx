@@ -41,7 +41,11 @@ function App() {
 
       <div className="container">
         <div className="row">
-          <Filter />
+          <Filter 
+          setSpecies={setSpecies}
+          setGender={setGender}
+          setStatus={setStatus} 
+          setPageNumber={setPageNumber}/>
 
           <div className="col-8">
             <div className="row">
@@ -52,6 +56,7 @@ function App() {
       </div>
       <Pagination
         info={info}
+
         pageNumber={pageNumber}
         setPageNumber={setPageNumber}
       />
