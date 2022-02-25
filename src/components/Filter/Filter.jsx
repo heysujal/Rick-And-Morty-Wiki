@@ -8,7 +8,7 @@ const Filter = () => {
       <h1 className ="text-center fw-bold">Filter</h1>
       <div
         style={{ cursor: "pointer" }}
-        className ="text-center text-decoration-underline text-primary"
+        className ="text-center text-decoration-underline text-primary mb-4"
       >
         Clear Filters
       </div>
